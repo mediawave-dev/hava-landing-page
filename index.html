@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>הצעד הראשון שלך להכנסה מהאינסטגרם | חוה ברהני</title>
-    <meta name="description" content="קורס דיגיטלי לנשים ואמהות שרוצות להתחיל להרוויח מאינסטגרם. ללא ניסיון קודם, בקצב שלך, צעד אחד קטן שמשנה הכל.">
+    <meta name="description"
+        content="קורס דיגיטלי לנשים ואמהות שרוצות להתחיל להרוויח מאינסטגרם. ללא ניסיון קודם, בקצב שלך, צעד אחד קטן שמשנה הכל.">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="he_IL">
     <meta property="og:title" content="הצעד הראשון שלך להכנסה מהאינסטגרם | חוה ברהני">
-    <meta property="og:description" content="קורס דיגיטלי לנשים ואמהות שרוצות להתחיל להרוויח מאינסטגרם. ללא ניסיון קודם, בקצב שלך, צעד אחד קטן שמשנה הכל.">
+    <meta property="og:description"
+        content="קורס דיגיטלי לנשים ואמהות שרוצות להתחיל להרוויח מאינסטגרם. ללא ניסיון קודם, בקצב שלך, צעד אחד קטן שמשנה הכל.">
     <meta property="og:image" content="hava-photo.jpg">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="הצעד הראשון שלך להכנסה מהאינסטגרם | חוה ברהני">
-    <meta name="twitter:description" content="קורס דיגיטלי לנשים ואמהות שרוצות להתחיל להרוויח מאינסטגרם. ללא ניסיון קודם, בקצב שלך, צעד אחד קטן שמשנה הכל.">
+    <meta name="twitter:description"
+        content="קורס דיגיטלי לנשים ואמהות שרוצות להתחיל להרוויח מאינסטגרם. ללא ניסיון קודם, בקצב שלך, צעד אחד קטן שמשנה הכל.">
     <meta name="twitter:image" content="hava-photo.jpg">
 
     <!-- Favicon — pink heart SVG -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 88 C25 65 5 50 5 30 A22 22 0 0 1 50 20 A22 22 0 0 1 95 30 C95 50 75 65 50 88Z' fill='%23C94B6D'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 88 C25 65 5 50 5 30 A22 22 0 0 1 50 20 A22 22 0 0 1 95 30 C95 50 75 65 50 88Z' fill='%23C94B6D'/%3E%3C/svg%3E">
 
     <!-- Fonts: preload + load -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&display=swap">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Heebo:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- JSON-LD Structured Data -->
@@ -46,18 +55,140 @@
     <style>
         /* ===== CSS Variables ===== */
         :root {
-            --pink-100: #FFF0F3;
-            --pink-200: #FFD6E0;
-            --pink-300: #FFB3C6;
-            --pink-400: #FF8FAB;
-            --pink-500: #E8678A;
-            --pink-600: #C94B6D;
-            --cream-50: #FFFDF8;
-            --cream-100: #FFF8EE;
-            --cream-200: #FFEFD6;
-            --text-dark: #3D2C2E;
-            --text-medium: #5A4447;
-            --text-light: #7D6366;
+            --pink-50: #fdf2f8;
+            --pink-100: #fce7f3;
+            --pink-200: #fbcfe8;
+            --pink-300: #f9a8d4;
+            --pink-400: #f472b6;
+            --pink-500: #ec4899;
+            --pink-600: #db2777;
+            --cream-50: #fffbeb;
+            --cream-100: #fef3c7;
+            --cream-200: #fde68a;
+            --text-dark: #1f2937;
+            --text-medium: #4b5563;
+            --text-light: #9ca3af;
+            --gradient-primary: linear-gradient(135deg, #fce7f3 0%, #fef3c7 100%);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+            /* Hand-Crafted Font Variable */
+            --font-hand: 'Gochi Hand', cursive;
+        }
+
+        /* Custom Cursor */
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+            display: none;
+            /* Hidden on mobile by default */
+        }
+
+        @media (min-width: 992px) {
+            .cursor-dot {
+                display: block;
+                width: 8px;
+                height: 8px;
+                background-color: var(--pink-600);
+            }
+
+            .cursor-outline {
+                display: block;
+                width: 40px;
+                height: 40px;
+                border: 1px solid rgba(219, 39, 119, 0.5);
+                transition: transform 0.1s ease, width 0.2s, height 0.2s, background-color 0.2s;
+            }
+
+            body:hover .cursor-outline.hover-active {
+                transform: translate(-50%, -50%) scale(1.5);
+                background-color: rgba(219, 39, 119, 0.1);
+                border-color: transparent;
+            }
+
+            /* Hide Default Cursor when custom is active - Optional, sometimes risky for UX. Keeping default visible for safety/usability preference. */
+            /* body { cursor: none; } */
+            /* a, button { cursor: none; } */
+        }
+
+        /* Breathing Animation for buttons */
+        @keyframes breath {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 4px 6px -1px rgba(236, 72, 153, 0.3);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 10px 15px -3px rgba(236, 72, 153, 0.5);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 6px -1px rgba(236, 72, 153, 0.3);
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--pink-600);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(236, 72, 153, 0.3);
+            animation: breath 3s infinite ease-in-out;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Hand-Drawn Elements Classes */
+        .hand-arrow-container {
+            position: absolute;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .hand-drawn-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1.2) rotate(-5deg);
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .hand-drawn-circle path {
+            fill: none;
+            stroke: var(--pink-400);
+            stroke-width: 2;
+            stroke-dasharray: 400;
+            stroke-dashoffset: 400;
+            transition: stroke-dashoffset 1s ease-out;
+        }
+
+        .hand-drawn-circle.active path {
+            stroke-dashoffset: 0;
+        }
+
+        .hand-note {
+            font-family: var(--font-hand);
+            color: var(--pink-600);
+            transform: rotate(-3deg);
+            display: inline-block;
+            font-size: 1.2rem;
         }
 
         /* ===== CSS Reset ===== */
@@ -97,11 +228,15 @@
             color: inherit;
         }
 
-        ul, ol {
+        ul,
+        ol {
             list-style: none;
         }
 
-        button, input, textarea, select {
+        button,
+        input,
+        textarea,
+        select {
             font-family: inherit;
             font-size: inherit;
             color: inherit;
@@ -115,7 +250,12 @@
         }
 
         /* ===== Base Typography ===== */
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-weight: 700;
             line-height: 1.3;
             color: var(--text-dark);
@@ -229,7 +369,8 @@
             padding: 0.4rem 1.2rem;
             font-size: 0.85rem;
             font-weight: 500;
-            color: #B5406A; /* darker than --pink-600 for WCAG AA 4.5:1 on light bg */
+            color: #B5406A;
+            /* darker than --pink-600 for WCAG AA 4.5:1 on light bg */
             margin-bottom: 1.25rem;
         }
 
@@ -419,7 +560,8 @@
             padding: 0.4rem 1.2rem;
             font-size: 0.85rem;
             font-weight: 500;
-            color: #B5406A; /* darker than --pink-600 for WCAG AA 4.5:1 on pink-100 bg */
+            color: #B5406A;
+            /* darker than --pink-600 for WCAG AA 4.5:1 on pink-100 bg */
             margin-bottom: 1.25rem;
         }
 
@@ -751,6 +893,299 @@
             color: var(--text-medium);
         }
 
+        /* ===== Wave Dividers ===== */
+        .wave-container {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            z-index: 2;
+        }
+
+        .wave-container--bottom {
+            bottom: -1px;
+            /* Fix for sub-pixel rendering gaps */
+            transform: rotate(180deg);
+        }
+
+        .wave-container--top {
+            top: -1px;
+        }
+
+        .wave-container svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 60px;
+        }
+
+        @media (min-width: 768px) {
+            .wave-container svg {
+                height: 100px;
+            }
+        }
+
+        .wave-fill-white {
+            fill: #FFFFFF;
+        }
+
+        .wave-fill-cream {
+            fill: var(--cream-50);
+        }
+
+        .wave-fill-grad-start {
+            fill: #FFFDF8;
+            /* Matches cream-50 but ensuring hex for SVG */
+        }
+
+        /* ===== Social Media / Instagram Card ===== */
+        .insta-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            /* Soft shadow */
+            max-width: 480px;
+            width: 100%;
+            margin: 0 auto;
+            border: 1px solid #DBDBDB;
+            /* IG border color */
+            overflow: hidden;
+        }
+
+        .insta-header {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem;
+            border-bottom: 1px solid #EFEFEF;
+        }
+
+        .insta-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            padding: 2px;
+            margin-left: 0.75rem;
+            /* RTL padding */
+        }
+
+        .insta-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            object-fit: cover;
+        }
+
+        .insta-handle {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #262626;
+        }
+
+        .insta-content {
+            padding: 1rem;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #262626;
+        }
+
+        .insta-actions {
+            padding: 0.5rem 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .insta-icon {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: #262626;
+            stroke-width: 2;
+            cursor: pointer;
+            transition: stroke 0.2s;
+        }
+
+        .insta-icon:hover {
+            stroke: var(--pink-500);
+        }
+
+        .insta-likes {
+            padding: 0 1rem 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #262626;
+        }
+
+        /* ===== Problem Section - New Visuals ===== */
+        .problem-intro-highlight {
+            font-size: 1.25rem;
+            color: var(--pink-600);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .problem-intro-highlight::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: var(--pink-200);
+            margin-top: 5px;
+            border-radius: 2px;
+        }
+
+        /* Question Cards */
+        .problem-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .problem-cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .problem-card {
+            background: #fff;
+            border: 1px solid var(--cream-200);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(201, 75, 109, 0.15);
+            border-color: var(--pink-200);
+        }
+
+        .problem-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            background: var(--cream-100);
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 50%;
+        }
+
+        .problem-card-text {
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.5;
+            font-size: 1.1rem;
+        }
+
+        /* Product Idea Chips */
+        .ideas-wrapper {
+            background: var(--cream-50);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .ideas-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .idea-chip {
+            background: #fff;
+            border: 1px solid var(--pink-200);
+            border-radius: 50px;
+            padding: 0.6rem 1.2rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-medium);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        .idea-chip span {
+            font-size: 1.2rem;
+        }
+
+        /* Sticky Note Exercise */
+        .sticky-note {
+            background: #fff9c4;
+            /* Classic yellow sticky note color */
+            background: linear-gradient(135deg, #fffbeb 0%, #fff5d1 100%);
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: rotate(-1deg);
+            position: relative;
+            font-family: inherit;
+            transition: transform 0.3s ease;
+        }
+
+        .sticky-note:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .sticky-note::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%) rotate(1deg);
+            width: 120px;
+            height: 35px;
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+            /* Tape effect */
+        }
+
+        .sticky-note h4 {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            border-bottom: 2px dashed rgba(0, 0, 0, 0.1);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .sticky-note p {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Updated Icon Styles */
+        .card-icon svg {
+            width: 48px;
+            height: 48px;
+            stroke: var(--pink-500);
+            fill: none;
+            stroke-width: 1.5;
+            transition: all 0.3s ease;
+        }
+
+        .who-card:hover .card-icon svg {
+            transform: scale(1.1);
+            stroke: var(--pink-600);
+        }
+
         /* ===== CTA / Payment Section ===== */
         .payment-section {
             position: relative;
@@ -812,7 +1247,8 @@
             font-size: 1.2rem;
             font-style: italic;
             font-weight: 500;
-            color: #B5406A; /* darker than --pink-600 for WCAG AA 4.5:1 on gradient bg */
+            color: #B5406A;
+            /* darker than --pink-600 for WCAG AA 4.5:1 on gradient bg */
             margin-bottom: 2rem;
         }
 
@@ -866,9 +1302,12 @@
         }
 
         @keyframes ctaPulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 box-shadow: 0 6px 24px rgba(201, 75, 109, 0.35);
             }
+
             50% {
                 box-shadow: 0 6px 36px rgba(201, 75, 109, 0.55);
             }
@@ -899,7 +1338,8 @@
 
         .payment-section .payment-note {
             font-size: 0.85rem;
-            color: var(--text-medium); /* upgraded from --text-light for WCAG AA 4.5:1 on gradient bg */
+            color: var(--text-medium);
+            /* upgraded from --text-light for WCAG AA 4.5:1 on gradient bg */
         }
 
         /* ===== Footer ===== */
@@ -946,7 +1386,8 @@
 
         .site-footer .footer-copyright {
             font-size: 0.8rem;
-            color: rgba(255, 248, 238, 0.6); /* raised from 0.5 for WCAG AA 4.5:1 on dark bg */
+            color: rgba(255, 248, 238, 0.6);
+            /* raised from 0.5 for WCAG AA 4.5:1 on dark bg */
         }
 
         /* ===== Focus States (Accessibility) ===== */
@@ -1020,15 +1461,17 @@
         }
 
         /* ===== Overflow Protection ===== */
-        html, body {
+        html,
+        body {
             overflow-x: hidden;
         }
     </style>
 </head>
+
 <body>
 
     <!-- ===== Hero Section ===== -->
-    <section class="hero" id="hero">
+    <header class="hero" id="hero">
         <!-- Decorative blobs -->
         <div class="hero-blob hero-blob--pink"></div>
         <div class="hero-blob hero-blob--cream"></div>
@@ -1038,29 +1481,44 @@
             <div class="hero-grid">
                 <!-- Right column: content -->
                 <div class="hero-content">
-                    <span class="hero-badge">✨ הקורס הדיגיטלי שישנה לך את הדרך</span>
+                    <span class="hero-badge">✨ גם את יכולה להתחיל</span>
                     <h1 class="hero-heading">
                         הצעד הראשון שלך
                         <br>
                         <span class="highlight">להכנסה מהאינסטגרם</span>
                     </h1>
                     <p class="hero-paragraph">
-                        היי! איזה כיף שאת כאן ואיזה כיף שבחרת לעשות משהו בשביל עצמך. את לא מאוחרת. את בדיוק בזמן.
+                        קורס דיגיטלי לנשים ואמהות שרוצות להתחיל להרוויח, בלי להפוך את החיים (ואת הבית) למשרד הפקות.
+                        צעד אחד קטן, מותאם לקצב שלך, שמשנה הכל.
                     </p>
-                    <a href="#payment" class="hero-cta">רוצה להתחיל ←</a>
+                    <a href="#start-now" class="hero-cta">אני רוצה להתחיל עכשיו &larr;</a>
                 </div>
 
                 <!-- Left column: image -->
                 <div class="hero-image-wrapper">
                     <div class="hero-image-frame">
-                        <img src="hava-photo.jpg" alt="חוה ברהני — מרצה ומנחה בקורס הכנסה מאינסטגרם" loading="eager">
-                        <span class="floating-badge floating-badge--money">💰 הכנסה מהבית</span>
-                        <span class="floating-badge floating-badge--pace">❤️ בקצב שלך</span>
+                        <img src="hava-photo.jpg" alt="חוה ברהני - הצעד הראשון שלך" loading="eager">
+                        <div class="floating-badge floating-badge--money">
+                            💰 הכנסה נוספת מהצד
+                        </div>
+                        <div class="floating-badge floating-badge--pace">
+                            ⏱️ בקצב שלך
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+
+        <!-- Bottom Wave -->
+        <div class="wave-container wave-container--bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="wave-fill-white"></path>
+            </svg>
+        </div>
+    </header>
 
     <!-- ===== Who Is This For Section ===== -->
     <section class="who-section" id="who">
@@ -1070,63 +1528,140 @@
             <p class="big-quote">״איך אני אמורה להתחיל עכשיו?״</p>
 
             <p class="who-paragraph">
-                הרבה אמהות מרגישות שהן פספסו את הרכבת, שהן כבר אולי מבוגרות מדי בשביל להתחיל — שאם הן לא התחילו בגיל 20, או לא בנו עסק "מסודר", אז זה כבר לא רלוונטי כרגע.
+                הרבה אמהות מרגישות שהן פספסו את הרכבת, שהן כבר אולי מבוגרות מדי בשביל להתחיל — שאם הן לא התחילו בגיל 20,
+                או לא בנו עסק "מסודר", אז זה כבר לא רלוונטי כרגע.
             </p>
             <p class="who-paragraph">
-                <strong>אבל האמת היא הפוכה לגמרי.</strong> דווקא אמהות, דווקא נשים באמצע החיים הן אלה שהכי יודעות למה אין להן זמן, מה זה ממש רגעי ומה באמת יכול לעבוד.
+                <strong>אבל האמת היא הפוכה לגמרי.</strong> דווקא אמהות, דווקא נשים באמצע החיים הן אלה שהכי יודעות למה
+                אין להן זמן, מה זה ממש רגעי ומה באמת יכול לעבוד.
             </p>
 
             <div class="who-cards">
                 <div class="who-card">
-                    <div class="card-icon">🙅‍♀️</div>
-                    <div class="card-title">את לא צריכה</div>
-                    <p class="card-text">להיות משפיענית עם עשרות אלפי עוקבים, לדעת לשווק או להעלות תוכן מושלם</p>
+                    <div class="card-icon">
+                        <!-- Feather Icon: User-X (modified) or similar for busy mom -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="8.5" cy="7" r="4"></circle>
+                            <line x1="23" y1="11" x2="17" y2="11"></line>
+                        </svg>
+                    </div>
+                    <div class="card-title">אמהות עסוקות</div>
+                    <div class="card-text">שרוצות ליצור הכנסה מהצד בלי לוותר על זמן עם הילדים.</div>
                 </div>
                 <div class="who-card">
-                    <div class="card-icon">✅</div>
-                    <div class="card-title">את כן צריכה</div>
-                    <p class="card-text">ניסיון חיים, מה שיש לך באופן טבעי מעצם היותך אישה ואמא, כוונות ורצון לעשות צעד אחד קטן בשבילך</p>
+                    <div class="card-icon">
+                        <!-- Feather Icon: Lightbulb -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="9" y1="18" x2="15" y2="18"></line>
+                            <line x1="10" y1="22" x2="14" y2="22"></line>
+                            <path
+                                d="M15.09 14c.18-.9.27-1.85.27-2.83 0-3.9-3.41-7.17-7.6-6.9 2.1-2.2 6.13-2.18 8.16.2 1.3 1.5 1.5 3.5.6 5.2a8.6 8.6 0 0 1-1.43 4.33z">
+                            </path><!-- Custom simplified bulb -->
+                            <path
+                                d="M12 2a6 6 0 0 1 6 6c0 2.97-2.16 5.5-5 5.92V17h-2v-3.08A6.01 6.01 0 0 1 6 8a6 6 0 0 1 6-6z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="card-title">נשים עם ידע</div>
+                    <div class="card-text">שיש להן ניסיון חיים, טיפים או כישרון שהן רוצות לחלוק.</div>
                 </div>
                 <div class="who-card">
-                    <div class="card-icon">📱</div>
-                    <div class="card-title">אינסטגרם היום מאפשר</div>
-                    <p class="card-text">להתחיל בקטן, בלי להפוך את זה לעסק גדול ובלי להקריב את הזמן היקר כ״כ חשוב עם הילדים שלנו</p>
+                    <div class="card-icon">
+                        <!-- Feather Icon: Trending Up / Sprout equivalent -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 6l-9.5 9.5-5-5L1 18"></path>
+                            <path d="M17 6h6v6"></path>
+                        </svg>
+                    </div>
+                    <div class="card-title">מתחילות מאפס</div>
+                    <div class="card-text">ללא רקע בשיווק, ללא מוצר קיים וללא עוקבים רבים.</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ===== Not Selling, Sharing Section ===== -->
-    <section class="sharing-section" id="sharing">
+    <section class="sharing-section" id="sharing" style="position: relative;">
+        <!-- Top Wave -->
+        <div class="wave-container wave-container--top">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="wave-fill-white"></path>
+            </svg>
+        </div>
+
         <div class="container">
-            <h2 class="section-heading">לא מוכרות, משתפות!</h2>
+            <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                <h2 class="section-heading">לא מוכרות, משתפות!</h2>
 
-            <p class="sharing-text">
-                הרבה נשים מפחדות מהשלב הזה. ״מה, פתאום למכור?״ ״זה לא ירגיש/ייראה מוזר?״
-            </p>
-            <p class="sharing-text">
-                האמת היא שאת לא מתחילה ממכירה, את מתחילה משיתוף. את לא מודיעה: ״יש לי מוצר, תקנו.״ את מספרת על משהו שפחדת ממנו, על איזשהו תהליך שעברת, תובנה שעשתה לך סדר בחיים, משהו שיגרום להזדהות איתו.
-            </p>
+                <p class="sharing-text">
+                    הרבה נשים מפחדות מהשלב הזה. "מה, פתאום למכור?" "זה לא ירגיש מוזר?"
+                    האמת היא שאת לא מתחילה ממכירה, את מתחילה משיתוף.
+                </p>
 
-            <p class="example-label">לדוגמה:</p>
+                <div class="example-label">במקום הודעת המכירה שאת מדמיינת, תיראי כמה זה טבעי:</div>
 
-            <div class="sharing-quotes">
-                <div class="sharing-quote">
-                    <p class="quote-text">הרבה זמן רציתי לנסות להרוויח מהאינסטגרם אבל פחדתי...</p>
+                <!-- Instagram Card Component -->
+                <div style="margin-bottom: 2rem; width: 100%;">
+                    <div class="insta-card">
+                        <div class="insta-header">
+                            <div class="insta-avatar">
+                                <img src="hava-photo.jpg" alt="Profile">
+                            </div>
+                            <div class="insta-handle">hava.br</div>
+                        </div>
+                        <!-- Mock Image Area (Optional, or just text) - going with text post style -->
+                        <!-- <div style="height: 300px; background-color: #f8f8f8; display: flex; align-items: center; justify-content: center; color: #ccc;">Post Image</div> -->
+
+                        <div class="insta-content" style="text-align: right;">
+                            <p style="margin-bottom: 1rem;">הרבה זמן רציתי לנסות להרוויח מהאינסטגרם אבל פחדתי… 🙈<br>
+                                הבנתי שאני לא צריכה עסק גדול, רק משהו אחד קטן שעובד לי.</p>
+
+                            <p>אז סידרתי לעצמי מסמך שעשה לי סדר בראש, ואמרתי שאם זה יעזור אפילו לעוד אמא אחת עשיתי את
+                                שלי.</p>
+
+                            <p style="color: #00376b; margin-top: 0.5rem;">#צעד_ראשון #אמא_משפיעה #הכנסה_מהצד</p>
+                        </div>
+
+                        <div class="insta-actions">
+                            <svg class="insta-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                            <svg class="insta-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18z" />
+                            </svg>
+                            <svg class="insta-icon" viewBox="0 0 24 24">
+                                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                            </svg>
+                        </div>
+                        <div class="insta-likes">טובה ו-148 נוספים אהבו</div>
+                    </div>
                 </div>
-                <div class="sharing-quote">
-                    <p class="quote-text">הבנתי שאני לא צריכה עסק גדול, רק משהו אחד קטן שעובד לי</p>
-                </div>
-                <div class="sharing-quote">
-                    <p class="quote-text">סידרתי לעצמי מסמך שעשה לי סדר בראש</p>
+
+                <h3 class="transition-text">אנשים לא קונים ממישהי שיודעת הכול.</h3>
+                <div class="closing-text">
+                    הם קונים ממי שצעדה צעד אחד לפניהם.<br>
+                    את לא צריכה להיות מוכנה לגמרי, רק להיות אמיתית.
                 </div>
             </div>
+        </div>
 
-            <p class="transition-text">ואז, בטבעיות את רושמת:</p>
-
-            <p class="closing-text">
-                אם זה יעזור אפילו לעוד אמא אחת אני עשיתי את שלי, שמה לכן לינק מסודר. אנשים לא קונים ממישהי שיודעת הכל. הם קונים ממי שצעדה צעד אחד לפניהם. את לא צריכה להיות מוכנה לגמרי, רק להיות אמיתית.
-            </p>
+        <!-- Bottom Wave -->
+        <div class="wave-container wave-container--bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="wave-fill-white"></path>
+            </svg>
         </div>
     </section>
 
@@ -1136,44 +1671,53 @@
             <h2 class="section-heading">אנחנו לא בוחרים חלום. בוחרים בעיה אחת קטנה.</h2>
 
             <p class="problem-text">
-                הטעות הכי גדולה בתחילת הדרך היא לחשוב: ״מה אני רוצה להיות?״ בלוגרית? יזמית? יוצרת תוכן? אבל כדי להתחיל - לא צריך זהות גדולה.
+                הטעות הכי גדולה בתחילת הדרך היא לחשוב: ״מה אני רוצה להיות?״ בלוגרית? יזמית? יוצרת תוכן? אבל כדי להתחיל -
+                לא צריך זהות גדולה.
             </p>
 
-            <div class="problem-highlight">
-                <p>צריך בעיה אחת קטנה שאפשר לפתור.</p>
+            <div class="problem-intro-highlight">
+                צריך רק בעיה אחת קטנה שאפשר לפתור
             </div>
 
-            <h3 class="sub-heading">תשאלי את עצמך בכנות:</h3>
+            <h3 class="sub-heading" style="text-align: center; margin-bottom: 2rem;">תשאלי את עצמך בכנות:</h3>
 
-            <div class="problem-list">
-                <div class="problem-list-item">
-                    <span class="list-icon">💡</span>
-                    <span>על מה אנשים שואלים אותי שוב ושוב?</span>
+            <div class="problem-cards-grid">
+                <div class="problem-card">
+                    <span class="problem-card-icon">💡</span>
+                    <p class="problem-card-text">על מה אנשים שואלים אותי שוב ושוב?</p>
                 </div>
-                <div class="problem-list-item">
-                    <span class="list-icon">🤝</span>
-                    <span>במה אני עוזרת לחברות, לאחיות, לעוקבות?</span>
+                <div class="problem-card">
+                    <span class="problem-card-icon">🤝</span>
+                    <p class="problem-card-text">במה אני הכי עוזרת לחברות, לאחיות, לעוקבות?</p>
                 </div>
-                <div class="problem-list-item">
-                    <span class="list-icon">🌱</span>
-                    <span>איזה דבר עברתי, הסתבכתי בו, ולמדתי ממנו?</span>
+                <div class="problem-card">
+                    <span class="problem-card-icon">🌱</span>
+                    <p class="problem-card-text">איזה דבר אני עברתי, הסתבכתי בו, ולמדתי ממנו?</p>
                 </div>
             </div>
 
-            <p class="problem-text">
-                הרעיון למוצר ראשון לא צריך להיות מרגש. הוא צריך להיות שימושי.
-            </p>
-
-            <div class="examples-block">
-                <p>
-                    דוגמאות - מסמך פשוט שעושה סדר בלו״ז של אמא, רשימת רעיונות לתוכן לאינסטגרם, מדריך קצר להתחלה. את לא צריכה ליצור קורס, ליווי, או איזה משהו שלוקח חודשים להכין וגם עולה לנו הון. מספיק מסמך אחד שמרכז ידע, תובנות וניסיון חיים.
+            <div class="ideas-wrapper">
+                <p class="problem-text" style="max-width: 100%; margin-bottom: 1rem;">
+                    <strong>הרעיון למוצר ראשון לא צריך להיות מרגש. הוא צריך להיות שימושי.</strong><br>
+                    את לא צריכה להרים הפקה של חודשים. הנה דוגמאות למוצרים פשוטים ומעולים:
                 </p>
+
+                <div class="ideas-grid">
+                    <div class="idea-chip"><span>🗓️</span> לו"ז יומי מסודר</div>
+                    <div class="idea-chip"><span>🧩</span> רעיונות להפעלת ילדים</div>
+                    <div class="idea-chip"><span>🥙</span> מתכונים ב-10 דקות</div>
+                    <div class="idea-chip"><span>💰</span> טיפים לחיסכון</div>
+                    <div class="idea-chip"><span>📸</span> רעיונות לסטורי</div>
+                </div>
             </div>
 
-            <div class="exercise-box">
-                <p class="exercise-title">✏️ תרגיל קצר לעצמך:</p>
-                <p class="exercise-text">
-                    שבי עם עצמך ותכתבי לך עכשיו רעיון אחד בלבד. לא 3 ולא 5, רעיון אחד שעולה לך לראש שיכול לעזור לאחרים, זה יהיה הבסיס שלך.
+            <div class="sticky-note">
+                <!-- Tape visual handled by CSS pseudo-element -->
+                <h4>✏️ תרגיל קצר לעצמך:</h4>
+                <p>
+                    שבי עם עצמך ותכתבי לך עכשיו <strong>רעיון אחד בלבד</strong>.
+                    <br><br>
+                    לא 3 ולא 5. רעיון אחד שעולה לך לראש שיכול לעזור לאחרים – זה יהיה הבסיס שלך להתחלה.
                 </p>
             </div>
         </div>
@@ -1185,22 +1729,50 @@
             <h2 class="payment-heading">בקיצור,</h2>
 
             <p class="payment-text">
-                את לא מתחילה למכור, את מתחילה להאמין בעצמך שזה אפשרי ולהתחיל לעשות פעולות. וצעד ראשון אחד מספיק כדי לפתוח לך דרך חדשה.
+                את לא מתחילה למכור, את מתחילה להאמין בעצמך שזה אפשרי ולהתחיל לעשות פעולות. וצעד ראשון אחד מספיק כדי
+                לפתוח לך דרך חדשה.
             </p>
 
-            <p class="warm-line">תנסי, מקסימום תצליחי ♡</p>
+            <p class="warm-line" style="font-size: 1.3rem; margin-bottom: 2rem;">תנסי, מקסימום תצליחי ♡</p>
 
-            <div class="price">₪___</div>
-
-            <a href="#" class="payment-cta">!אני רוצה להתחיל עכשיו</a>
-
-            <div class="payment-badges">
-                <span class="payment-badge"><span class="badge-check">✓</span> גישה מיידית לקורס</span>
-                <span class="payment-badge"><span class="badge-check">✓</span> קבלה במייל</span>
-                <span class="payment-badge"><span class="badge-check">✓</span> תמיכה באינסטגרם</span>
+            <div class="price"
+                style="position: relative; background: #fff; padding: 1rem 2rem; border: none; font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--pink-600); z-index: 1;">
+                מחיר השקה: ₪47
+                <svg class="hand-drawn-circle" viewBox="0 0 200 80" preserveAspectRatio="none">
+                    <path
+                        d="M10,40 C10,15 40,5 100,5 C160,5 190,15 190,40 C190,65 160,75 100,75 C40,75 10,65 10,40 Z" />
+                </svg>
             </div>
 
-            <p class="payment-note">לאחר התשלום תישלח אליך קבלה והקורס ישירות למייל</p>
+            <div style="margin-bottom: 2rem; position: relative; display: inline-block;">
+                <div class="hand-arrow-container" style="top: 0; right: -70px; transform: rotate(20deg);">
+                    <svg width="60" height="40" viewBox="0 0 60 40">
+                        <path d="M50,5 Q30,20 5,30 M5,30 L15,25 M5,30 L15,35" fill="none" stroke="#db2777"
+                            stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <span class="hand-note"
+                        style="position: absolute; top: -25px; right: -10px; white-space: nowrap; font-size: 1rem;">מתחילים
+                        כאן!</span>
+                </div>
+                <a href="#" class="payment-cta">אני רוצה להתחיל עכשיו &larr;</a>
+            </div>
+
+            <div class="payment-badges">
+                <span class="payment-badge"><span class="badge-check">✓</span> גישה מיידית למדריך</span>
+                <span class="payment-badge"><span class="badge-check">✓</span> קובץ PDF להורדה</span>
+                <span class="payment-badge"><span class="badge-check">✓</span> תמיכה ושאלות באינסטגרם</span>
+            </div>
+
+            <div
+                style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 2rem; align-items: center; color: var(--text-light); font-size: 0.9rem;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <span>תשלום מאובטח ב-100%</span>
+            </div>
+
+            <p class="payment-note" style="margin-top: 1rem;">לאחר התשלום תישלח אליך קבלה והמדריך ישירות למייל</p>
         </div>
     </section>
 
@@ -1216,25 +1788,32 @@
 
             <div class="footer-socials">
                 <!-- Instagram -->
-                <a href="https://www.instagram.com/hava_brhani?igsh=cnZzZWVhZXJjOGxt" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">
+                <a href="https://www.instagram.com/hava_brhani?igsh=cnZzZWVhZXJjOGxt" target="_blank" rel="noopener"
+                    class="footer-social-link" aria-label="Instagram">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor"
+                            stroke-width="2" />
+                        <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2" />
+                        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" />
                     </svg>
                 </a>
 
                 <!-- TikTok -->
-                <a href="https://www.tiktok.com/@havabrhani?_r=1&_t=ZS-93fbgaUc6a7" target="_blank" rel="noopener" class="footer-social-link" aria-label="TikTok">
+                <a href="https://www.tiktok.com/@havabrhani?_r=1&_t=ZS-93fbgaUc6a7" target="_blank" rel="noopener"
+                    class="footer-social-link" aria-label="TikTok">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                        <path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.43 0-2.59-1.16-2.59-2.59a2.59 2.59 0 0 1 2.59-2.59c.28 0 .55.05.8.13V9.73a5.62 5.62 0 0 0-.8-.06C7.04 9.67 5 11.72 5 14.22a5.09 5.09 0 0 0 5.07 5.07 5.09 5.09 0 0 0 5.07-5.07V9.59a7.34 7.34 0 0 0 4.29 1.38V7.88a4.28 4.28 0 0 1-2.83-2.06z" fill="currentColor"/>
+                        <path
+                            d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.43 0-2.59-1.16-2.59-2.59a2.59 2.59 0 0 1 2.59-2.59c.28 0 .55.05.8.13V9.73a5.62 5.62 0 0 0-.8-.06C7.04 9.67 5 11.72 5 14.22a5.09 5.09 0 0 0 5.07 5.07 5.09 5.09 0 0 0 5.07-5.07V9.59a7.34 7.34 0 0 0 4.29 1.38V7.88a4.28 4.28 0 0 1-2.83-2.06z"
+                            fill="currentColor" />
                     </svg>
                 </a>
 
                 <!-- Facebook -->
-                <a href="https://facebook.com/hava.kasso" target="_blank" rel="noopener" class="footer-social-link" aria-label="Facebook">
+                <a href="https://facebook.com/hava.kasso" target="_blank" rel="noopener" class="footer-social-link"
+                    aria-label="Facebook">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z" fill="currentColor"/>
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z"
+                            fill="currentColor" />
                     </svg>
                 </a>
             </div>
@@ -1242,6 +1821,9 @@
             <p class="footer-copyright">&copy; 2025 חוה ברהני. כל הזכויות שמורות.</p>
         </div>
     </footer>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
 
     <script>
         (function () {
@@ -1323,5 +1905,83 @@
             });
         })();
     </script>
+    <script>
+        // Custom Cursor Logic
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+
+        // Hide cursor on touch devices detection (rough check)
+        const isTouchDevice = () => {
+            return (('ontouchstart' in window) ||
+                (navigator.maxTouchPoints > 0) ||
+                (navigator.msMaxTouchPoints > 0));
+        }
+
+        if (!isTouchDevice() && window.innerWidth >= 992) {
+            window.addEventListener('mousemove', function (e) {
+                const posX = e.clientX;
+                const posY = e.clientY;
+
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
+
+                // Add slight delay to outline for fluid feel
+                cursorOutline.animate({
+                    left: `${posX}px`,
+                    top: `${posY}px`
+                }, { duration: 500, fill: "forwards" });
+            });
+
+            // Hover effect for interactive elements
+            const interactiveElements = document.querySelectorAll('a, button, .problem-card, .who-card, .idea-chip, .insta-icon');
+
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursorOutline.classList.add('hover-active');
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursorOutline.classList.remove('hover-active');
+                });
+            });
+        }
+
+        // Trigger generic animations for doodles when in view
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const doodleObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.hand-drawn-circle').forEach(el => {
+            doodleObserver.observe(el);
+        });
+
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Header Scroll Logic
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
+
 </html>
