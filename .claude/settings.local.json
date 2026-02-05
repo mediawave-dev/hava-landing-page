@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Read(//c/Users/MoriaLevy/.claude/skills/visual-review-skill/**)",
-      "Bash(npx serve:*)",
-      "Bash(dir:*)"
-    ]
-  }
-}
