@@ -69,9 +69,9 @@
             --text-medium: #4b5563;
             --text-light: #9ca3af;
             --gradient-primary: linear-gradient(135deg, #fce7f3 0%, #fef3c7 100%);
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 
             /* Hand-Crafted Font Variable */
             --font-hand: 'Gochi Hand', cursive;
@@ -145,6 +145,11 @@
             animation: breath 3s infinite ease-in-out;
             position: relative;
             z-index: 10;
+            min-height: 48px;
+            /* Touch target minimum */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* ===== CSS Reset ===== */
@@ -1501,22 +1506,77 @@
             overflow-x: hidden;
         }
 
-        /* FAQ Styles */
-        .faq-item .faq-answer {
+        /* ===== FAQ Styles (Mobile Optimized) ===== */
+        .faq-section {
+            padding: 4rem 0;
+            background: var(--cream-50);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #fff;
+            border: 1px solid var(--cream-200);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: right;
+            padding: 1.25rem 1.5rem;
+            /* Generous touch area */
+            background: none;
+            border: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            min-height: 60px;
+            /* Ensure easy tapping */
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            color: var(--text-medium);
+            line-height: 1.7;
             display: none;
+            border-top: 1px solid transparent;
+        }
+
+        .faq-item.active {
+            border-color: var(--pink-200);
+            box-shadow: var(--shadow-md);
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--pink-600);
         }
 
         .faq-item.active .faq-answer {
             display: block;
-            animation: fadeIn 0.3s ease-in-out;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
+            border-top-color: var(--pink-50);
+            animation: fadeIn 0.3s ease-out;
         }
 
         .faq-icon {
             transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-right: 1rem;
+            /* Space between text and icon */
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            color: var(--pink-600);
         }
 
         @keyframes fadeIn {
@@ -1823,300 +1883,368 @@
         </div>
     </section>
 
-    <!-- ===== CTA / Payment Section ===== -->
-    <section class="payment-section" id="payment">
-        <div class="container">
-            <h2 class="payment-heading">בקיצור,</h2>
+    <!-- ===== FAQ Section ===== -->
+    <section class="faq-section" id="faq">
+        <div class="container faq-container">
+            <h2 class="section-heading" style="text-align: center; margin-bottom: 3rem;">שאלות שאולי יש לך</h2>
 
-            <p class="payment-text">
-                את לא מתחילה למכור, את מתחילה להאמין בעצמך שזה אפשרי ולהתחיל לעשות פעולות. וצעד ראשון אחד מספיק כדי
-                לפתוח לך דרך חדשה.
-            </p>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>אני חייבת הרבה עוקבים כדי להתחיל?</span>
+                    <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    ממש לא. המדריך מלמד בדיוק איך להתחיל מאפס, ואיך להשתמש בתוכן חכם כדי למשוך את הקהל *הנכון*, ולא סתם
+                    הרבה עוקבים שלא קונים.
+                </div>
+            </div>
 
-            <p class="warm-line" style="font-size: 1.3rem; margin-bottom: 2rem;">תנסי, מקסימום תצליחי ♡</p>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>אין לי זמן, זה מתאים לי?</span>
+                    <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    בדיוק בשביל זה יצרתי את המדריך. כל השיטה בנויה למישהי עסוקה (כמוני!). הכל מחולק לצעדים קטנים ופשוטים
+                    שאפשר ליישם גם ב-15 דקות ביום.
+                </div>
+            </div>
 
-            <!-- Price & CTA Wrapper - Centered Flex Column -->
-            <!-- Price & CTA Wrapper - Centered Flex Column (Classes) -->
-            <div class="price-cta-wrapper">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>זה מתאים אם אין לי רעיון למוצר?</span>
+                    <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    כן! יש פרק שלם שמוקדש למציאת הרעיון שלך. כולל רשימת בנק של 50+ רעיונות מוכנים שתוכלי לקחת ולהתאים
+                    לעצמך.
+                </div>
+            </div>
 
-                <!-- Price Blob -->
-                <div class="price-blob-container">
-                    <div class="price-blob-svg">
-                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="currentColor"
-                                d="M44.7,-76.4C58.9,-69.2,71.8,-59.1,81.6,-46.6C91.4,-34.1,98.1,-19.2,95.8,-5.3C93.5,8.6,82.2,21.5,70.8,32.4C59.4,43.3,47.9,52.2,36.3,60.4C24.7,68.6,12.9,76.1,-0.5,77C-13.9,77.9,-25.9,72.2,-37.9,64.8C-49.9,57.4,-61.9,48.3,-71.4,36.5C-80.9,24.7,-87.9,10.2,-87.3,-4C-86.7,-18.2,-78.5,-32.1,-68.1,-43.3C-57.7,-54.5,-45.1,-63,-32.3,-70.8C-19.5,-78.6,-6.5,-85.7,5.5,-85.8C10.5,-85.9,21,-79,30.5,-73.6L44.7,-76.4Z"
-                                transform="translate(100 100)" />
-                        </svg>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>איך אקבל את המדריך?</span>
+                    <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    מיד לאחר התשלום תקבלי מייל עם חשבונית וקישור להורדה ישירה של המדריך (קובץ PDF מעוצב ונוח לקריאה
+                    בנייד). הוא נשאר אצלך לתמיד!
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ===== CTA / Payment Section ===== -->
+        <section class="payment-section" id="payment">
+            <div class="container">
+                <h2 class="payment-heading">בקיצור,</h2>
+
+                <p class="payment-text">
+                    את לא מתחילה למכור, את מתחילה להאמין בעצמך שזה אפשרי ולהתחיל לעשות פעולות. וצעד ראשון אחד מספיק כדי
+                    לפתוח לך דרך חדשה.
+                </p>
+
+                <p class="warm-line" style="font-size: 1.3rem; margin-bottom: 2rem;">תנסי, מקסימום תצליחי ♡</p>
+
+                <!-- Price & CTA Wrapper - Centered Flex Column -->
+                <!-- Price & CTA Wrapper - Centered Flex Column (Classes) -->
+                <div class="price-cta-wrapper">
+
+                    <!-- Price Blob -->
+                    <div class="price-blob-container">
+                        <div class="price-blob-svg">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="currentColor"
+                                    d="M44.7,-76.4C58.9,-69.2,71.8,-59.1,81.6,-46.6C91.4,-34.1,98.1,-19.2,95.8,-5.3C93.5,8.6,82.2,21.5,70.8,32.4C59.4,43.3,47.9,52.2,36.3,60.4C24.7,68.6,12.9,76.1,-0.5,77C-13.9,77.9,-25.9,72.2,-37.9,64.8C-49.9,57.4,-61.9,48.3,-71.4,36.5C-80.9,24.7,-87.9,10.2,-87.3,-4C-86.7,-18.2,-78.5,-32.1,-68.1,-43.3C-57.7,-54.5,-45.1,-63,-32.3,-70.8C-19.5,-78.6,-6.5,-85.7,5.5,-85.8C10.5,-85.9,21,-79,30.5,-73.6L44.7,-76.4Z"
+                                    transform="translate(100 100)" />
+                            </svg>
+                        </div>
+                        <div class="price-content">
+                            <span class="price-label">מחיר השקה מיוחד</span>
+                            <span class="price-amount">₪47</span>
+                        </div>
                     </div>
-                    <div class="price-content">
-                        <span class="price-label">מחיר השקה מיוחד</span>
-                        <span class="price-amount">₪47</span>
+
+                    <!-- Arrow & Button Container -->
+                    <div class="cta-container">
+                        <!-- Arrow Points to Button -->
+                        <div class="hand-arrow-wrapper">
+                            <svg width="50" height="40" viewBox="0 0 60 40">
+                                <path d="M50,5 Q30,20 15,35 M15,35 L25,30 M15,35 L20,25" fill="none" stroke="#db2777"
+                                    stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span class="hand-note"
+                                style="position: absolute; top: -20px; right: -10px; white-space: nowrap; font-size: 0.9rem; font-weight: 600; color: var(--pink-600);">מתחילים
+                                כאן!</span>
+                        </div>
+
+                        <a href="#payment" class="payment-cta-styled">
+                            אני רוצה להתחיל עכשיו&nbsp;&larr;
+                        </a>
                     </div>
+
                 </div>
 
-                <!-- Arrow & Button Container -->
-                <div class="cta-container">
-                    <!-- Arrow Points to Button -->
-                    <div class="hand-arrow-wrapper">
-                        <svg width="50" height="40" viewBox="0 0 60 40">
-                            <path d="M50,5 Q30,20 15,35 M15,35 L25,30 M15,35 L20,25" fill="none" stroke="#db2777"
-                                stroke-width="2" stroke-linecap="round" />
-                        </svg>
-                        <span class="hand-note"
-                            style="position: absolute; top: -20px; right: -10px; white-space: nowrap; font-size: 0.9rem; font-weight: 600; color: var(--pink-600);">מתחילים
-                            כאן!</span>
-                    </div>
+                <div class="payment-badges">
+                    <span class="payment-badge"><span class="badge-check">✓</span> גישה מיידית למדריך</span>
+                    <span class="payment-badge"><span class="badge-check">✓</span> קובץ PDF להורדה</span>
+                    <span class="payment-badge"><span class="badge-check">✓</span> תמיכה ושאלות באינסטגרם</span>
+                </div>
 
-                    <a href="#payment" class="payment-cta-styled">
-                        אני רוצה להתחיל עכשיו&nbsp;&larr;
+                <div
+                    style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 2rem; align-items: center; color: var(--text-light); font-size: 0.9rem;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    <span>תשלום מאובטח ב-100%</span>
+                </div>
+
+                <p class="payment-note" style="margin-top: 1rem; text-align: center;">לאחר התשלום תישלח אליך קבלה
+                    והמדריך
+                    ישירות למייל</p>
+            </div>
+        </section>
+
+        <!-- ===== Sticky Mobile CTA ===== -->
+        <div class="sticky-cta" id="stickyCta">
+            <a href="#payment" class="sticky-cta-btn">רוצה להתחיל עכשיו&nbsp;←</a>
+        </div>
+
+        <!-- ===== Footer ===== -->
+        <footer class="site-footer"
+            style="text-align: center; background: #111; color: #fff; padding: 4rem 0; border-top: none;">
+            <div class="container">
+                <h3 class="footer-name"
+                    style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #fff; margin-bottom: 2rem; letter-spacing: 1px;">
+                    Hava Brhani</h3>
+
+                <div class="footer-socials"
+                    style="justify-content: center; display: flex; gap: 1.5rem; margin-bottom: 2.5rem;">
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/hava_brhani?igsh=cnZzZWVhZXJjOGxt" target="_blank" rel="noopener"
+                        class="footer-social-link" aria-label="Instagram"
+                        style="color: #fff; background: rgba(255,255,255,0.1); padding: 0.8rem; border-radius: 50%; transition: all 0.3s; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/@havabrhani?_r=1&_t=ZS-93fbgaUc6a7" target="_blank" rel="noopener"
+                        class="footer-social-link" aria-label="TikTok"
+                        style="color: #fff; background: rgba(255,255,255,0.1); padding: 0.8rem; border-radius: 50%; transition: all 0.3s; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                        </svg>
+                    </a>
+
+                    <!-- Facebook -->
+                    <a href="https://facebook.com/hava.kasso" target="_blank" rel="noopener" class="footer-social-link"
+                        aria-label="Facebook"
+                        style="color: #fff; background: rgba(255,255,255,0.1); padding: 0.8rem; border-radius: 50%; transition: all 0.3s; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
                     </a>
                 </div>
 
+                <div class="footer-links" style="margin-bottom: 1.5rem; font-size: 0.9rem; opacity: 0.8;">
+                    <a href="terms.html" target="_blank"
+                        style="color: #ccc; margin: 0 0.5rem; text-decoration: none; border-bottom: 1px solid #555;">תקנון
+                        שימוש</a>
+                    <span style="color: #555;">|</span>
+                    <a href="privacy.html" target="_blank"
+                        style="color: #ccc; margin: 0 0.5rem; text-decoration: none; border-bottom: 1px solid #555;">מדיניות
+                        פרטיות</a>
+                </div>
+
+                <p class="footer-copyright" style="font-size: 0.8rem; color: #777;">&copy; 2025 Hava Brhani. All rights
+                    reserved.</p>
             </div>
+        </footer>
 
-            <div class="payment-badges">
-                <span class="payment-badge"><span class="badge-check">✓</span> גישה מיידית למדריך</span>
-                <span class="payment-badge"><span class="badge-check">✓</span> קובץ PDF להורדה</span>
-                <span class="payment-badge"><span class="badge-check">✓</span> תמיכה ושאלות באינסטגרם</span>
-            </div>
+        <div class="cursor-dot"></div>
+        <div class="cursor-outline"></div>
 
-            <div
-                style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 2rem; align-items: center; color: var(--text-light); font-size: 0.9rem;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                </svg>
-                <span>תשלום מאובטח ב-100%</span>
-            </div>
-
-            <p class="payment-note" style="margin-top: 1rem; text-align: center;">לאחר התשלום תישלח אליך קבלה והמדריך
-                ישירות למייל</p>
-        </div>
-    </section>
-
-    <!-- ===== Sticky Mobile CTA ===== -->
-    <div class="sticky-cta" id="stickyCta">
-        <a href="#payment" class="sticky-cta-btn">רוצה להתחיל עכשיו&nbsp;←</a>
-    </div>
-
-    <!-- ===== Footer ===== -->
-    <footer class="site-footer"
-        style="text-align: center; background: #111; color: #fff; padding: 4rem 0; border-top: none;">
-        <div class="container">
-            <h3 class="footer-name"
-                style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #fff; margin-bottom: 2rem; letter-spacing: 1px;">
-                Hava Brhani</h3>
-
-            <div class="footer-socials"
-                style="justify-content: center; display: flex; gap: 1.5rem; margin-bottom: 2.5rem;">
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/hava_brhani?igsh=cnZzZWVhZXJjOGxt" target="_blank" rel="noopener"
-                    class="footer-social-link" aria-label="Instagram"
-                    style="color: #fff; background: rgba(255,255,255,0.1); padding: 0.8rem; border-radius: 50%; transition: all 0.3s; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                </a>
-
-                <!-- TikTok -->
-                <a href="https://www.tiktok.com/@havabrhani?_r=1&_t=ZS-93fbgaUc6a7" target="_blank" rel="noopener"
-                    class="footer-social-link" aria-label="TikTok"
-                    style="color: #fff; background: rgba(255,255,255,0.1); padding: 0.8rem; border-radius: 50%; transition: all 0.3s; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
-                    </svg>
-                </a>
-
-                <!-- Facebook -->
-                <a href="https://facebook.com/hava.kasso" target="_blank" rel="noopener" class="footer-social-link"
-                    aria-label="Facebook"
-                    style="color: #fff; background: rgba(255,255,255,0.1); padding: 0.8rem; border-radius: 50%; transition: all 0.3s; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                </a>
-            </div>
-
-            <div class="footer-links" style="margin-bottom: 1.5rem; font-size: 0.9rem; opacity: 0.8;">
-                <a href="terms.html" target="_blank"
-                    style="color: #ccc; margin: 0 0.5rem; text-decoration: none; border-bottom: 1px solid #555;">תקנון
-                    שימוש</a>
-                <span style="color: #555;">|</span>
-                <a href="privacy.html" target="_blank"
-                    style="color: #ccc; margin: 0 0.5rem; text-decoration: none; border-bottom: 1px solid #555;">מדיניות
-                    פרטיות</a>
-            </div>
-
-            <p class="footer-copyright" style="font-size: 0.8rem; color: #777;">&copy; 2025 Hava Brhani. All rights
-                reserved.</p>
-        </div>
-    </footer>
-
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
-
-    <script>
-        (function () {
-            /* ===== 1. Scroll Fade-In Animations ===== */
-            // Add .fade-up class to all section children that should animate
-            var sections = document.querySelectorAll(
-                '.who-section .container > *, ' +
-                '.sharing-section .container > *, ' +
-                '.problem-section .container > *, ' +
-                '.payment-section .container > *, ' +
-                '.site-footer .container > *'
-            );
-            sections.forEach(function (el) {
-                el.classList.add('fade-up');
-            });
-
-            var fadeObserver = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        fadeObserver.unobserve(entry.target);
-                    }
+        <script>
+            (function () {
+                /* ===== 1. Scroll Fade-In Animations ===== */
+                // Add .fade-up class to all section children that should animate
+                var sections = document.querySelectorAll(
+                    '.who-section .container > *, ' +
+                    '.sharing-section .container > *, ' +
+                    '.problem-section .container > *, ' +
+                    '.payment-section .container > *, ' +
+                    '.site-footer .container > *'
+                );
+                sections.forEach(function (el) {
+                    el.classList.add('fade-up');
                 });
-            }, { threshold: 0.15 });
 
-            document.querySelectorAll('.fade-up').forEach(function (el) {
-                fadeObserver.observe(el);
-            });
-
-            /* ===== 2. Sticky Mobile CTA — hide when payment is visible ===== */
-            var stickyCta = document.getElementById('stickyCta');
-            var paymentSection = document.getElementById('payment');
-
-            if (stickyCta && paymentSection) {
-                var paymentObserver = new IntersectionObserver(function (entries) {
+                var fadeObserver = new IntersectionObserver(function (entries) {
                     entries.forEach(function (entry) {
                         if (entry.isIntersecting) {
-                            stickyCta.classList.add('is-hidden');
-                        } else {
-                            stickyCta.classList.remove('is-hidden');
+                            entry.target.classList.add('is-visible');
+                            fadeObserver.unobserve(entry.target);
                         }
                     });
-                }, { threshold: 0.1 });
+                }, { threshold: 0.15 });
 
-                paymentObserver.observe(paymentSection);
-            }
+                document.querySelectorAll('.fade-up').forEach(function (el) {
+                    fadeObserver.observe(el);
+                });
 
-            /* ===== 3. Subtle Parallax on Hero Blobs ===== */
-            var blobs = document.querySelectorAll('.hero-blob');
+                /* ===== 2. Sticky Mobile CTA — hide when payment is visible ===== */
+                var stickyCta = document.getElementById('stickyCta');
+                var paymentSection = document.getElementById('payment');
 
-            if (blobs.length) {
-                var ticking = false;
-
-                window.addEventListener('scroll', function () {
-                    if (!ticking) {
-                        requestAnimationFrame(function () {
-                            var scrollY = window.pageYOffset;
-                            blobs[0].style.transform = 'translateY(' + (scrollY * 0.15) + 'px)';
-                            blobs[1].style.transform = 'translateY(' + (scrollY * -0.1) + 'px)';
-                            blobs[2].style.transform = 'translate(-50%, -50%) translateY(' + (scrollY * 0.08) + 'px)';
-                            ticking = false;
+                if (stickyCta && paymentSection) {
+                    var paymentObserver = new IntersectionObserver(function (entries) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting) {
+                                stickyCta.classList.add('is-hidden');
+                            } else {
+                                stickyCta.classList.remove('is-hidden');
+                            }
                         });
-                        ticking = true;
-                    }
-                }, { passive: true });
+                    }, { threshold: 0.1 });
+
+                    paymentObserver.observe(paymentSection);
+                }
+
+                /* ===== 3. Subtle Parallax on Hero Blobs ===== */
+                var blobs = document.querySelectorAll('.hero-blob');
+
+                if (blobs.length) {
+                    var ticking = false;
+
+                    window.addEventListener('scroll', function () {
+                        if (!ticking) {
+                            requestAnimationFrame(function () {
+                                var scrollY = window.pageYOffset;
+                                blobs[0].style.transform = 'translateY(' + (scrollY * 0.15) + 'px)';
+                                blobs[1].style.transform = 'translateY(' + (scrollY * -0.1) + 'px)';
+                                blobs[2].style.transform = 'translate(-50%, -50%) translateY(' + (scrollY * 0.08) + 'px)';
+                                ticking = false;
+                            });
+                            ticking = true;
+                        }
+                    }, { passive: true });
+                }
+
+                /* ===== 4. Smooth Scroll for Internal Anchors ===== */
+                document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+                    link.addEventListener('click', function (e) {
+                        var targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        var target = document.querySelector(targetId);
+                        if (target) {
+                            e.preventDefault();
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    });
+                });
+            })();
+        </script>
+        <script>
+            // Custom Cursor Logic
+            const cursorDot = document.querySelector('.cursor-dot');
+            const cursorOutline = document.querySelector('.cursor-outline');
+
+            // Hide cursor on touch devices detection (rough check)
+            const isTouchDevice = () => {
+                return (('ontouchstart' in window) ||
+                    (navigator.maxTouchPoints > 0) ||
+                    (navigator.msMaxTouchPoints > 0));
             }
 
-            /* ===== 4. Smooth Scroll for Internal Anchors ===== */
-            document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-                link.addEventListener('click', function (e) {
-                    var targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    var target = document.querySelector(targetId);
-                    if (target) {
-                        e.preventDefault();
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (!isTouchDevice() && window.innerWidth >= 992) {
+                window.addEventListener('mousemove', function (e) {
+                    const posX = e.clientX;
+                    const posY = e.clientY;
+
+                    cursorDot.style.left = `${posX}px`;
+                    cursorDot.style.top = `${posY}px`;
+
+                    // Add slight delay to outline for fluid feel
+                    cursorOutline.animate({
+                        left: `${posX}px`,
+                        top: `${posY}px`
+                    }, { duration: 500, fill: "forwards" });
+                });
+
+                // Hover effect for interactive elements
+                const interactiveElements = document.querySelectorAll('a, button, .problem-card, .who-card, .idea-chip, .insta-icon');
+
+                interactiveElements.forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        cursorOutline.classList.add('hover-active');
+                    });
+                    el.addEventListener('mouseleave', () => {
+                        cursorOutline.classList.remove('hover-active');
+                    });
+                });
+            }
+
+            // Trigger generic animations for doodles when in view
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5
+            };
+
+            const doodleObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
                     }
                 });
-            });
-        })();
-    </script>
-    <script>
-        // Custom Cursor Logic
-        const cursorDot = document.querySelector('.cursor-dot');
-        const cursorOutline = document.querySelector('.cursor-outline');
+            }, observerOptions);
 
-        // Hide cursor on touch devices detection (rough check)
-        const isTouchDevice = () => {
-            return (('ontouchstart' in window) ||
-                (navigator.maxTouchPoints > 0) ||
-                (navigator.msMaxTouchPoints > 0));
-        }
-
-        if (!isTouchDevice() && window.innerWidth >= 992) {
-            window.addEventListener('mousemove', function (e) {
-                const posX = e.clientX;
-                const posY = e.clientY;
-
-                cursorDot.style.left = `${posX}px`;
-                cursorDot.style.top = `${posY}px`;
-
-                // Add slight delay to outline for fluid feel
-                cursorOutline.animate({
-                    left: `${posX}px`,
-                    top: `${posY}px`
-                }, { duration: 500, fill: "forwards" });
+            document.querySelectorAll('.hand-drawn-circle').forEach(el => {
+                doodleObserver.observe(el);
             });
 
-            // Hover effect for interactive elements
-            const interactiveElements = document.querySelectorAll('a, button, .problem-card, .who-card, .idea-chip, .insta-icon');
-
-            interactiveElements.forEach(el => {
-                el.addEventListener('mouseenter', () => {
-                    cursorOutline.classList.add('hover-active');
-                });
-                el.addEventListener('mouseleave', () => {
-                    cursorOutline.classList.remove('hover-active');
+            // FAQ Toggle Logic
+            document.querySelectorAll('.faq-question').forEach(button => {
+                button.addEventListener('click', () => {
+                    const faqItem = button.parentElement;
+                    faqItem.classList.toggle('active');
                 });
             });
-        }
 
-        // Trigger generic animations for doodles when in view
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.5
-        };
-
-        const doodleObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
+            // Header Scroll Logic
+            const header = document.querySelector('.header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
                 }
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.hand-drawn-circle').forEach(el => {
-            doodleObserver.observe(el);
-        });
-
-        // FAQ Toggle Logic
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const faqItem = button.parentElement;
-                faqItem.classList.toggle('active');
-            });
-        });
-
-        // Header Scroll Logic
-        const header = document.querySelector('.header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    </script>
+        </script>
 </body>
 
 </html>
