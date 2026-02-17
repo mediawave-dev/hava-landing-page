@@ -44,20 +44,20 @@
 
     <style>
         @font-face {
-            font-family: 'EFT-OffSet-Bold';
-            src: url('./fonts/EFT_OffSet-Bold.ttf') format('truetype');
+            font-family: 'Assistant';
+            src: url('./fonts/Assistant-VariableFont_wght.ttf') format('truetype');
         }
 
         @font-face {
-            font-family: 'OS-Luizi-Round';
-            src: url('./fonts/OS-Luizi-FFC-v1/OS_Luizi Round-FFC.otf') format('opentype');
+            font-family: 'Choco';
+            src: url('./fonts/choco.ttf') format('truetype');
         }
 
         /* ===== Design Tokens ===== */
         :root {
             /* Font Families */
-            --ff-display: 'EFT-OffSet-Bold', serif;
-            --ff-body: 'OS-Luizi-Round', sans-serif;
+            --ff-display: 'Assistant', serif;
+            --ff-body: 'Choco', sans-serif;
 
             /* Fluid Type Scale (Golden Ratio inspired) */
             --fs-xs: clamp(0.625rem, 0.6rem + 0.15vw, 0.75rem);
@@ -769,21 +769,18 @@
 
         .cta-container {
             position: relative;
-            margin-block-start: calc(-1 * var(--space-2));
         }
 
         .hand-arrow-wrapper {
-            position: absolute;
-            inset-block-start: -35px;
-            inset-inline-end: 50%;
-            transform: translateX(50%) rotate(10deg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             pointer-events: none;
+            margin-block-end: 0;
+            gap: 2px;
         }
 
         .hand-note {
-            position: absolute;
-            inset-block-start: -20px;
-            inset-inline-end: -10px;
             white-space: nowrap;
             font-size: var(--fs-sm);
             font-weight: var(--fw-bold);
@@ -858,8 +855,12 @@
 
         @media (max-width: 767px) {
             .price-blob-container {
-                width: 240px;
-                height: 160px;
+                width: 280px;
+                height: 200px;
+                margin-inline: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
 
             .price-amount {
@@ -867,9 +868,19 @@
             }
 
             .hand-arrow-wrapper {
-                inset-inline-end: 50%;
-                inset-block-start: -25px;
-                transform: translateX(50%) rotate(10deg) scale(0.85);
+                display: none;
+            }
+
+            .price-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                transform: translateY(15px);
+            }
+
+            .price-cta-wrapper {
+                align-items: center;
             }
 
             .payment-cta-styled {
@@ -1029,8 +1040,9 @@
                         <span class="highlight">להכנסה מהאינסטגרם</span>
                     </h1>
                     <p class="hero-paragraph">
-                        מסמך קצר שיעשה לך סדר ויהפוך את הזמן שלך להכנסה.
-                        בלי הפקות, בלי להסתבך. צעד אחד קטן שפותח דלת לעולם חדש.
+                        מסמך קצר שיעשה לך סדר ויהפוך את הזמן שלך להכנסה מהאינסטגרם בלי הפקות, בלי להסתבך.
+                        <br>
+                        צעד אחד קטן שפותח דלת לעולם חדש.
                     </p>
                     <a href="#start-now" class="hero-cta">אני רוצה להתחיל עכשיו&nbsp;&larr;</a>
                 </div>
@@ -1181,15 +1193,14 @@
                     </div>
                 </div>
 
-                <div class="cta-container">
-                    <div class="hand-arrow-wrapper">
-                        <svg width="50" height="40" viewBox="0 0 60 40">
-                            <path d="M50,5 Q30,20 15,35 M15,35 L25,30 M15,35 L20,25" fill="none" stroke="#b94663"
-                                stroke-width="2" stroke-linecap="round" />
-                        </svg>
-                        <span class="hand-note">מתחילים כאן!</span>
-                    </div>
+                <div class="hand-arrow-wrapper">
+                    <span class="hand-note">מתחילים כאן!</span>
+                    <svg width="30" height="30" viewBox="0 0 30 30">
+                        <path d="M15,5 L15,22 M15,22 L10,17 M15,22 L20,17" fill="none" stroke="#b94663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
 
+                <div class="cta-container">
                     <a href="#payment" class="payment-cta-styled">
                         אני רוצה להתחיל עכשיו&nbsp;&larr;
                     </a>
