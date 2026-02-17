@@ -27,13 +27,6 @@
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 88 C25 65 5 50 5 30 A22 22 0 0 1 50 20 A22 22 0 0 1 95 30 C95 50 75 65 50 88Z' fill='%23B94663'/%3E%3C/svg%3E">
 
-    <!-- Fonts: Frank Ruhl Libre (display) + Heebo (body) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700;900&family=Heebo:wght@300;400;700;800&display=swap"
-        rel="stylesheet">
-
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
@@ -50,11 +43,21 @@
     </script>
 
     <style>
+        @font-face {
+            font-family: 'EFT-OffSet-Bold';
+            src: url('./fonts/EFT_OffSet-Bold.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'OS-Luizi-Round';
+            src: url('./fonts/OS-Luizi-FFC-v1/OS_Luizi Round-FFC.otf') format('opentype');
+        }
+
         /* ===== Design Tokens ===== */
         :root {
             /* Font Families */
-            --ff-display: 'Frank Ruhl Libre', serif;
-            --ff-body: 'Heebo', sans-serif;
+            --ff-display: 'EFT-OffSet-Bold', serif;
+            --ff-body: 'OS-Luizi-Round', sans-serif;
 
             /* Fluid Type Scale (Golden Ratio inspired) */
             --fs-xs: clamp(0.625rem, 0.6rem + 0.15vw, 0.75rem);
@@ -409,6 +412,7 @@
             justify-content: center;
             background: var(--color-accent);
             color: #fff;
+            font-family: var(--ff-display);
             font-weight: var(--fw-bold);
             font-size: var(--fs-md);
             padding: var(--space-3) var(--space-8);
@@ -526,102 +530,6 @@
             fill: var(--color-surface);
         }
 
-        /* ===== Who Section ===== */
-        .who-section {
-            background: var(--color-surface);
-            padding-block: var(--space-16);
-        }
-
-        @media (min-width: 992px) {
-            .who-section {
-                padding-block: var(--space-24);
-            }
-        }
-
-        .who-section .section-heading {
-            font-size: var(--fs-xl);
-            line-height: var(--lh-snug);
-            margin-block-end: var(--space-6);
-        }
-
-        .who-section .big-quote {
-            font-size: var(--fs-lg);
-            font-weight: var(--fw-bold);
-            color: var(--rose-500);
-            margin-block-end: var(--space-8);
-            line-height: var(--lh-snug);
-            letter-spacing: normal;
-        }
-
-        .who-section .who-paragraph {
-            font-size: var(--fs-md);
-            line-height: var(--lh-hebrew);
-            color: var(--color-text-muted);
-            max-width: 680px;
-            margin-block-end: var(--space-4);
-        }
-
-        .who-section .who-paragraph:last-of-type {
-            margin-block-end: var(--space-8);
-        }
-
-        .who-cards {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-8);
-            margin-block-start: var(--space-4);
-        }
-
-        @media (min-width: 768px) {
-            .who-cards {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .who-card {
-            background: var(--neutral-50);
-            border: 1px solid var(--neutral-200);
-            border-radius: var(--space-4);
-            padding: var(--space-6);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .who-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .who-card .card-icon {
-            margin-block-end: var(--space-3);
-        }
-
-        .who-card .card-icon svg {
-            width: 48px;
-            height: 48px;
-            stroke: var(--rose-500);
-            fill: none;
-            stroke-width: 1.5;
-            transition: transform 0.3s ease;
-        }
-
-        .who-card:hover .card-icon svg {
-            transform: scale(1.1);
-        }
-
-        .who-card .card-title {
-            font-family: var(--ff-display);
-            font-size: var(--fs-md);
-            font-weight: var(--fw-bold);
-            color: var(--color-text);
-            margin-block-end: var(--space-2);
-        }
-
-        .who-card .card-text {
-            font-size: var(--fs-base);
-            line-height: var(--lh-hebrew);
-            color: var(--color-text-muted);
-        }
-
         /* ===== Teaser Section ===== */
         .teaser-section {
             padding-block: var(--space-16);
@@ -655,6 +563,7 @@
 
         .teaser-title {
             display: block;
+            font-family: var(--ff-display);
             font-size: var(--fs-md);
             font-weight: var(--fw-bold);
             margin-block-end: var(--space-1);
@@ -802,6 +711,7 @@
         }
 
         .warm-line {
+            font-family: var(--ff-display);
             font-size: var(--fs-lg);
             font-weight: var(--fw-bold);
             color: var(--rose-600);
@@ -864,9 +774,9 @@
 
         .hand-arrow-wrapper {
             position: absolute;
-            inset-block-start: -30px;
-            inset-inline-end: -50px;
-            transform: rotate(10deg);
+            inset-block-start: -35px;
+            inset-inline-end: 50%;
+            transform: translateX(50%) rotate(10deg);
             pointer-events: none;
         }
 
@@ -886,6 +796,7 @@
             color: white;
             padding: var(--space-4) var(--space-12);
             border-radius: 50px;
+            font-family: var(--ff-display);
             font-weight: var(--fw-bold);
             font-size: var(--fs-md);
             box-shadow: 0 6px 24px rgba(185, 70, 99, 0.35);
@@ -940,6 +851,7 @@
         .payment-note {
             margin-block-start: var(--space-4);
             text-align: center;
+            margin-inline: auto;
             font-size: var(--fs-sm);
             color: var(--color-text-muted);
         }
@@ -955,9 +867,9 @@
             }
 
             .hand-arrow-wrapper {
-                inset-inline-end: -20px;
+                inset-inline-end: 50%;
                 inset-block-start: -25px;
-                transform: rotate(10deg) scale(0.85);
+                transform: translateX(50%) rotate(10deg) scale(0.85);
             }
 
             .payment-cta-styled {
@@ -1001,6 +913,7 @@
             display: inline-block;
             background: var(--color-accent);
             color: #fff;
+            font-family: var(--ff-display);
             font-weight: var(--fw-bold);
             font-size: var(--fs-base);
             padding: var(--space-3) var(--space-6);
@@ -1116,7 +1029,7 @@
                         <span class="highlight">להכנסה מהאינסטגרם</span>
                     </h1>
                     <p class="hero-paragraph">
-                        המדריך המקיף שיהפוך את הזמן שלך להכנסה.
+                        מסמך קצר שיעשה לך סדר ויהפוך את הזמן שלך להכנסה.
                         בלי הפקות, בלי להסתבך. צעד אחד קטן שפותח דלת לעולם חדש.
                     </p>
                     <a href="#start-now" class="hero-cta">אני רוצה להתחיל עכשיו&nbsp;&larr;</a>
@@ -1140,80 +1053,18 @@
         </div>
     </header>
 
-    <!-- ===== Who Is This For Section ===== -->
-    <section class="who-section" id="who">
-        <div class="container">
-            <span class="section-tag">למי הקורס הזה מתאים?</span>
-            <h2 class="section-heading">אם את קוראת את זה, כנראה שעברה לך לפחות פעם אחת המחשבה:</h2>
-            <p class="big-quote">״איך אני אמורה להתחיל עכשיו?״</p>
-
-            <p class="who-paragraph">
-                מרגישה ש"פספסת את הרכבת"? שאת חייבת להיות בת 20 כדי להצליח באינסטגרם?
-                המדריך הזה נכתב כדי להוכיח לך אחרת.
-            </p>
-            <p class="who-paragraph">
-                <strong>נשים (ואמהות בפרט) הן היזמיות הטובות ביותר.</strong>
-                אנחנו יודעות לנהל זמן, מבינות כאב אמיתי, ויש לנו הכי הרבה מה לתת.
-                זה בדיוק מה שצריך כדי להתחיל.
-            </p>
-
-            <div class="who-cards">
-                <div class="who-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="8.5" cy="7" r="4"></circle>
-                            <line x1="23" y1="11" x2="17" y2="11"></line>
-                        </svg>
-                    </div>
-                    <div class="card-title">נשים עסוקות</div>
-                    <div class="card-text">שרוצות ליצור הכנסה מהצד בלי לוותר על זמן יקר.</div>
-                </div>
-                <div class="who-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="9" y1="18" x2="15" y2="18"></line>
-                            <line x1="10" y1="22" x2="14" y2="22"></line>
-                            <path
-                                d="M15.09 14c.18-.9.27-1.85.27-2.83 0-3.9-3.41-7.17-7.6-6.9 2.1-2.2 6.13-2.18 8.16.2 1.3 1.5 1.5 3.5.6 5.2a8.6 8.6 0 0 1-1.43 4.33z">
-                            </path>
-                            <path
-                                d="M12 2a6 6 0 0 1 6 6c0 2.97-2.16 5.5-5 5.92V17h-2v-3.08A6.01 6.01 0 0 1 6 8a6 6 0 0 1 6-6z">
-                            </path>
-                        </svg>
-                    </div>
-                    <div class="card-title">נשים עם ידע</div>
-                    <div class="card-text">שיש להן ניסיון חיים, טיפים או כישרון שהן רוצות לחלוק.</div>
-                </div>
-                <div class="who-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M23 6l-9.5 9.5-5-5L1 18"></path>
-                            <path d="M17 6h6v6"></path>
-                        </svg>
-                    </div>
-                    <div class="card-title">מתחילות מאפס</div>
-                    <div class="card-text">ללא רקע בשיווק, ללא מוצר קיים וללא עוקבים רבים.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ===== Teaser Section (What's Inside) ===== -->
     <section class="teaser-section" id="teaser">
         <div class="container teaser-container">
             <div class="section-tag">אז מה מחכה לך בפנים?</div>
-            <h2 class="section-heading">כל מה שאת צריכה כדי להתחיל, <br>בלי בלבולי מוח.</h2>
+            <h2 class="section-heading">3 צעדים קטנים כדי להתחיל</h2>
 
             <div class="teaser-list">
                 <div class="teaser-item">
                     <div class="teaser-check">✓</div>
                     <div>
                         <strong class="teaser-title">נוסחת 3 השאלות למציאת נישה</strong>
-                        <span class="teaser-desc">איך למצוא את הנושא שלך ב-5 דקות (גם אם נראה לך שאין לך
+                        <span class="teaser-desc">איך למצוא את הייחודיות שלך / הנישה שלך ב-5 דקות (גם אם נראה לך שאין לך
                             שום כישרון מיוחד).</span>
                     </div>
                 </div>
@@ -1235,15 +1086,6 @@
                             (זה ממכר!).</span>
                     </div>
                 </div>
-
-                <div class="teaser-item">
-                    <div class="teaser-check">✓</div>
-                    <div>
-                        <strong class="teaser-title">בונוס: רשימת הזהב 🎁</strong>
-                        <span class="teaser-desc">50+ רעיונות למוצרים דיגיטליים פשוטים שאפשר להכין בסופ"ש
-                            אחד.</span>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1251,7 +1093,7 @@
     <!-- ===== FAQ Section ===== -->
     <section class="faq-section" id="faq">
         <div class="container faq-container">
-            <h2 class="section-heading faq-heading">שאלות שאולי יש לך</h2>
+            <h2 class="section-heading faq-heading">עונה על החששות שלך</h2>
 
             <div class="faq-item">
                 <button class="faq-question">
@@ -1263,8 +1105,7 @@
                     </svg>
                 </button>
                 <div class="faq-answer">
-                    ממש לא. המדריך מלמד בדיוק איך להתחיל מאפס, ואיך להשתמש בתוכן חכם כדי למשוך את הקהל *הנכון*, ולא סתם
-                    הרבה עוקבים שלא קונים.
+                    חד משמעית לא, המסמך מלמד איך להתחיל מאפס ואיך ליצור תוכן אמיתי שימשוך אלייך את הקהל הנכון שבסוף יקנה ממך.
                 </div>
             </div>
 
@@ -1278,8 +1119,7 @@
                     </svg>
                 </button>
                 <div class="faq-answer">
-                    בדיוק בשביל זה יצרתי את המדריך. כל השיטה בנויה למישהי עסוקה (כמוני!). הכל מחולק לצעדים קטנים ופשוטים
-                    שאפשר ליישם גם ב-15 דקות ביום.
+                    המסמך שיצרתי נוצר ב-10 דקות והמשימות שם הן קצרות ומדויקות לאמהות ונשים עסוקות (כמוני!) ככה שתקדישי לזה גג רבע שעה.
                 </div>
             </div>
 
@@ -1293,14 +1133,13 @@
                     </svg>
                 </button>
                 <div class="faq-answer">
-                    כן! יש פרק שלם שמוקדש למציאת הרעיון שלך. כולל רשימת בנק של 50+ רעיונות מוכנים שתוכלי לקחת ולהתאים
-                    לעצמך.
+                    כן! במסמך תביני איך את מוצאת את הרעיון שמתאים לך וייחודי לך.
                 </div>
             </div>
 
             <div class="faq-item">
                 <button class="faq-question">
-                    <span>איך אקבל את המדריך?</span>
+                    <span>איך אקבל את המסמך?</span>
                     <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -1308,7 +1147,7 @@
                     </svg>
                 </button>
                 <div class="faq-answer">
-                    מיד לאחר התשלום תקבלי מייל עם חשבונית וקישור להורדה ישירה של המדריך (קובץ PDF מעוצב ונוח לקריאה
+                    מיד לאחר התשלום תקבלי מייל עם חשבונית וקישור להורדה ישירה של המסמך (קובץ PDF מעוצב ונוח לקריאה
                     בנייד). הוא נשאר אצלך לתמיד!
                 </div>
             </div>
@@ -1338,7 +1177,7 @@
                     </div>
                     <div class="price-content">
                         <span class="price-label">מחיר השקה מיוחד</span>
-                        <span class="price-amount">₪47</span>
+                        <span class="price-amount">₪99</span>
                     </div>
                 </div>
 
@@ -1358,7 +1197,7 @@
             </div>
 
             <div class="payment-badges">
-                <span class="payment-badge"><span class="badge-check">✓</span> גישה מיידית למדריך</span>
+                <span class="payment-badge"><span class="badge-check">✓</span> גישה מיידית למסמך</span>
                 <span class="payment-badge"><span class="badge-check">✓</span> קובץ PDF להורדה</span>
                 <span class="payment-badge"><span class="badge-check">✓</span> תמיכה ושאלות באינסטגרם</span>
             </div>
@@ -1371,7 +1210,7 @@
                 <span>תשלום מאובטח ב-100%</span>
             </div>
 
-            <p class="payment-note">לאחר התשלום תישלח אליך קבלה והמדריך ישירות למייל</p>
+            <p class="payment-note">לאחר התשלום תישלח אליך קבלה והמסמך ישירות למייל</p>
         </div>
     </section>
 
