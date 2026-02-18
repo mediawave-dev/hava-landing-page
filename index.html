@@ -42,6 +42,8 @@
     }
     </script>
 
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@2/dist/lottie-player.js" defer></script>
+
     <style>
         @font-face {
             font-family: 'Assistant';
@@ -390,11 +392,11 @@
 
         .hero-inline-lottie {
             display: inline-block;
-            width: clamp(2.25rem, 5vw, 5rem);
-            height: clamp(2.25rem, 5vw, 5rem);
+            width: clamp(4rem, 6vw, 7rem);
+            height: clamp(4rem, 6vw, 7rem);
             vertical-align: middle;
             overflow: hidden;
-            margin-inline-end: 0.1em;
+            margin-inline-end: 0.15em;
         }
 
         .hero-paragraph {
@@ -1088,9 +1090,14 @@
                         <br>
                         <span class="highlight">להכנסה</span>
                         <br>
-                        <span class="highlight">מהאינסטגרם</span><video class="hero-inline-lottie" autoplay loop muted playsinline disablepictureinpicture>
-                            <source src="animations/instagram/instagram-logo.webm" type="video/webm">
-                        </video>
+                        <span class="highlight">מהאינסטגרם</span><lottie-player
+                            class="hero-inline-lottie"
+                            src="animations/instagram/instagram-logo.json"
+                            background="transparent"
+                            speed="1"
+                            loop
+                            autoplay
+                        ></lottie-player>
                     </h1>
                     <p class="hero-paragraph">
                         מסמך קצר שיעשה לך סדר ויהפוך את הזמן שלך להכנסה מהאינסטגרם בלי הפקות, בלי להסתבך.
