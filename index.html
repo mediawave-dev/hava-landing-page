@@ -318,7 +318,7 @@
 
         .hero-grid {
             display: flex;
-            flex-direction: column-reverse;
+            flex-direction: column;
             align-items: center;
             gap: var(--space-8);
             text-align: center;
@@ -450,6 +450,30 @@
             .hero-cta {
                 padding: var(--space-3) var(--space-6);
                 font-size: var(--fs-base);
+            }
+
+            .hero-image-wrapper {
+                margin-block-start: 0 !important;
+                padding: 0 !important;
+            }
+
+            .hero-grid {
+                gap: 0.5rem !important;
+            }
+
+            .hero-image-frame {
+                max-width: 200px !important;
+                margin-inline: auto !important;
+            }
+
+            .hero-image-frame img {
+                border-radius: 200px 200px 0 0 !important;
+                aspect-ratio: auto !important;
+                object-fit: cover !important;
+                object-position: center 60% !important;
+                max-height: 220px !important;
+                width: 100% !important;
+                margin-block-start: -40px !important;
             }
         }
 
@@ -1084,20 +1108,17 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <span class="hero-badge">✨ גם את יכולה להתחיל</span>
+                    <span class="hero-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-inline-end:4px;">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        גם את יכולה להתחיל
+                    </span>
                     <h1 class="hero-heading">
                         הצעד הראשון שלך
-                        <br>
-                        <span class="highlight">להכנסה</span>
-                        <br>
-                        <span class="highlight">מהאינסטגרם</span><lottie-player
-                            class="hero-inline-lottie"
-                            src="animations/instagram/instagram-logo.json"
-                            background="transparent"
-                            speed="1"
-                            loop
-                            autoplay
-                        ></lottie-player>
+                        <span class="highlight">להכנסה מהאינסטגרם</span>
                     </h1>
                     <p class="hero-paragraph">
                         מסמך קצר שיעשה לך סדר ויהפוך את הזמן שלך להכנסה מהאינסטגרם בלי הפקות, בלי להסתבך.
